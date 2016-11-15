@@ -47,8 +47,8 @@ app.put('/lions/:id', function(req, res) {
 
 app.delete('/lions/:id', function(req, res) {
   var lion = _.findIndex(lions, {id: req.params.id});
+  req.lion = lion;
   lions.splice(lion, 1);
-
   res.json(req.lion);
 });
 
